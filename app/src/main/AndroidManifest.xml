@@ -17,17 +17,13 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="${APP_API_KEY}"/>
-
-        <activity android:name=".ui.StatActivity"></activity>
+            android:value="${APP_KEY}"/>
 
         <service
             android:name=".radio.RadioService"
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".ui.CountActivity" />
-        <activity android:name=".ui.SetupActivity" />
         <activity android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
