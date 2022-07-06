@@ -1,6 +1,9 @@
 # Fitness-Music-Counter
 A simple android application for workout counting with radio music
 
+# Playstore link
+https://play.google.com/store/apps/details?id=com.mkstudio.FitnessMusicCounter
+
 # Basic Architecture
 This project based on MVVM architecture with dagger Hilt.
 
