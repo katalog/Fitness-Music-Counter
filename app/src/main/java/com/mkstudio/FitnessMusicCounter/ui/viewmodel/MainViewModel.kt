@@ -23,7 +23,7 @@ class MainViewModel @Inject constructor(
     val repsMax: LiveData<Int> get() = _repsMax
 
     // stat
-    private val _stationName = MutableLiveData<String>(Constants.STR_SELECT_RADIO_STATION)
+    private val _stationName = MutableLiveData<String>(Constants.STR_NO_RADIO)
     val stationName: LiveData<String> get() = _stationName
 
     init {
