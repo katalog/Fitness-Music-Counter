@@ -30,19 +30,23 @@ android {
     }
 
     buildTypes {
+        // to replace double quotes problem in manifest file
+        def appkey = properties['app_api_key']
+        appkey = appkey.replace('"', '')
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "APP_API_KEY", "${properties['app_api_key']}"
-            manifestPlaceholders["APP_API_KEY"] = properties['app_api_key']
+            buildConfigField "String", "APP_API_KEY", properties['app_api_key']
             buildConfigField "String", "FULL_ADS_KEY", properties['ads_full_key']
+            manifestPlaceholders = ["APP_KEY": appkey]
         }
         debug {
-            buildConfigField "String", "APP_API_KEY", "${properties['app_test_key']}"
-            manifestPlaceholders["APP_API_KEY"] = properties['app_api_key']
+            buildConfigField "String", "APP_API_KEY", properties['app_api_key']
             buildConfigField "String", "FULL_ADS_KEY", properties['ads_test_key']
+            manifestPlaceholders = ["APP_KEY": appkey]
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
