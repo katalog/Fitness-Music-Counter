@@ -33,12 +33,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "APP_API_KEY", properties['app_api_key']
+            buildConfigField "String", "APP_API_KEY", "${properties['app_api_key']}"
             manifestPlaceholders["APP_API_KEY"] = properties['app_api_key']
             buildConfigField "String", "FULL_ADS_KEY", properties['ads_full_key']
         }
         debug {
-            buildConfigField "String", "APP_API_KEY", properties['app_test_key']
+            buildConfigField "String", "APP_API_KEY", "${properties['app_test_key']}"
             manifestPlaceholders["APP_API_KEY"] = properties['app_api_key']
             buildConfigField "String", "FULL_ADS_KEY", properties['ads_test_key']
         }
